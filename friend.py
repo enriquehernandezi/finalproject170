@@ -1,4 +1,4 @@
-from Birthday import Birthday
+from birthday import Birthday
 
 
 class Person:

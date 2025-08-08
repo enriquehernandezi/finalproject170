@@ -1,5 +1,5 @@
 import csv
-from person import Person
+from friend import Person
 from birthday import Birthday
 from datetime import datetime
 import os
@@ -7,14 +7,17 @@ import os
 class MyFriendsApp:
     def __init__(self):
         self.friends = []
-        self.filename = "friends_database.csv"
+        self.filename = "friendsdatabase.csv"
 
     def load_from_file(self):
+        print("Loading data from CSV...")
         if not os.path.exists(self.filename):
+            print("CSV file not found!")
             return
         with open(self.filename, newline='', encoding='utf-8') as file:
             reader = csv.DictReader(file)
             for row in reader:
+                print(f"Loading: {row['first_name']} {row['last_name']}")
                 person = Person(row['first_name'], row['last_name'])
                 if row['birthday_month'] and row['birthday_day']:
                     person.set_birthday(int(row['birthday_month']), int(row['birthday_day']))
