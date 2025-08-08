@@ -50,6 +50,12 @@ class Birthday:
         # subtract from birthday
         # return # of days
         today = datetime.today()
+        today_day = self.day_in_year(today.month, today.day)
+        birthday_day = self.day_in_year(self.__month, self.__day)
+        if birthday_day >= today_day:
+            return birthday_day - today_day
+        else:
+            return 365 - today_day + birthday_day
         # COMPLETE THIS FOR YOUR ASSIGNMENT
 
     def day_in_year(self, month, day):
