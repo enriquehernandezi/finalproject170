@@ -6,7 +6,6 @@ class Person:
         self.last_name = last_name
         self._birthday = None
         self.email_address = None
-        self.nickname = None
         self.street_address = None
         self.city = None
         self.state = None
